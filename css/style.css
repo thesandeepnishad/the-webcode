@@ -1,0 +1,551 @@
+/* fonts  */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* css variables */
+:root {
+  --black: #000;
+  --white: #fff;
+  --off-white: rgba(255, 255, 255, 0.8);
+  --pink: #f83c69;
+  --green: rgb(38, 199, 151);
+  --yellow: rgb(202, 173, 5);
+  --dark-gray: rgb(39, 44, 58);
+  --light-gray: rgb(54, 60, 75);
+  --black-opacity-2: rgba(0, 0, 0, 0.2);
+  --black-opacity-6: rgba(0, 0, 0, 0.6);
+}
+
+/* ----Custom scrollbar---- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--green);
+  border-radius: 5px;
+}
+
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+.btn {
+  background-color: var(--green);
+  border-radius: 50px;
+  text-decoration: none;
+  padding: 12px 30px;
+  border: 1px solid var(--green);
+  outline: none;
+  color: var(--white);
+  text-transform: capitalize;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.btn:hover {
+  color: var(--green);
+  background-color: transparent;
+  border: 1px solid var(--green);
+}
+.container {
+  width: 100%;
+  height: auto;
+  background-color: var(--dark-gray);
+  font-family: "Poppins", sans-serif;
+}
+.bg-yellow {
+  background-color: var(--yellow);
+}
+.bg-pink {
+  background-color: var(--pink);
+}
+.bg-green {
+  background-color: var(--green);
+}
+.bg-gray {
+  background-color: var(--light-gray);
+}
+.animate:hover{
+  transform: translateY(-2px);
+  transition: all 0.5s linear;
+}
+/* ---------NavBar Start-------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  border-bottom: 1px solid var(--light-gray);
+  padding: 0 100px;
+}
+.logo {
+  color: var(--white);
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+.nav-list .list-item {
+  padding: 0 20px;
+  cursor: pointer;
+}
+.list-item a {
+  text-decoration: none;
+  color: var(--off-white);
+}
+.list-item a:hover {
+  color: var(--pink);
+}
+.nav-list.active {
+  background-color: var(--dark-gray);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 2;
+}
+.nav-list.active .list-item {
+  padding: 20px 0;
+  font-size: 1.5rem;
+}
+.nav-btn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-color: var(--white);
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.nav-btn span {
+  z-index: 2;
+  width: 55%;
+  height: 3px;
+  background-color: var(--green);
+  position: absolute;
+}
+.nav-btn span::before,
+.nav-btn span::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--green);
+  transform: translateY(-6px);
+  display: block;
+  position: absolute;
+  transition: all 0.5s;
+}
+.nav-btn span::after {
+  transform: translateY(6px);
+}
+.nav-btn span.active {
+  background: transparent;
+}
+.nav-btn span.active::before {
+  transform: rotate(45deg);
+}
+.nav-btn span.active::after {
+  transform: rotate(-45deg);
+}
+/* ---------NavBar Ends-------- */
+
+/* ---------Main-Section Start-------- */
+.main {
+  width: 100%;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+}
+.main .content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+.content h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: var(--green);
+}
+.line {
+  display: inline-block;
+  color: var(--pink);
+  position: relative;
+  z-index: 1;
+}
+.line::after {
+  content: "";
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--off-white);
+  z-index: -1;
+  position: absolute;
+  display: block;
+  transform: translateY(-18px) rotate(-3deg);
+}
+.content p {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+p span {
+  display: block;
+}
+.main .img-box {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 50px;
+}
+.img-box image {
+  position: absolute;
+}
+.img-box span {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: var(--white);
+  font-weight: lighter;
+}
+span.html {
+  left: 10px;
+  background-color: var(--yellow);
+}
+span.css {
+  right: 15px;
+  background-color: var(--pink);
+}
+span.java {
+  top: 10px;
+  background-color: var(--green);
+}
+span.react {
+  bottom: 20px;
+  background-color: var(--light-gray);
+}
+.main .btn {
+  margin-top: 40px;
+}
+/* ---------Main-Section Ends-------- */
+
+/* ---------Why-Us-Section Start-------- */
+.why-us {
+  padding: 50px 100px;
+  color: var(--white);
+}
+.heading {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+.why-us span.line {
+  color: var(--white);
+}
+.why-us span.line::after {
+  transform: translateY(-8px) rotate(-3deg);
+  height: 2px;
+  background-color: var(--green);
+}
+.cards {
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+}
+.cards .card {
+  padding: 30px;
+  background-color: var(--light-gray);
+  box-shadow: 0 0 20px var(--black-opacity-6);
+}
+.card:nth-child(2) {
+  margin: 0 30px;
+}
+.card span i {
+  color: var(--green);
+  font-size: 2rem;
+}
+.card h3 {
+  padding: 10px 0;
+}
+/* ---------Why-Us-Section Ends-------- */
+
+/* ---------Popular-Courses-Section Start-------- */
+.courses {
+  padding: 50px 100px;
+}
+.courses .line {
+  color: var(--white);
+}
+.courses .line::after {
+  width: 48%;
+  height: 2px;
+  background-color: var(--green);
+  transform: translateY(-2px) rotate(-2deg);
+}
+.courses img {
+  width: 100%;
+  border-radius: 5px;
+}
+.courses .img-out {
+  position: relative;
+}
+.courses-cards {
+  display: flex;
+}
+.courses-cards .one {
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+}
+.one:nth-child(2) {
+  padding-left: 30px;
+}
+.one .courses-card:nth-child(1) {
+  padding-right: 30px;
+}
+.courses .price {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--dark-gray);
+  padding: 5px 10px;
+  color: var(--green);
+  border-radius: 5px;
+}
+.courses-cards .starLine {
+  display: flex;
+  justify-content: space-between;
+  color: var(--off-white);
+  font-weight: lighter;
+}
+.starLine .star {
+  color: goldenrod;
+}
+.courses-cards h3 {
+  color: var(--white);
+  text-transform: capitalize;
+  font-weight: 500;
+}
+/* ---------Popular-Courses-Section Ends-------- */
+
+/* ---------Achivement-Section Start-------- */
+.achivement {
+  padding: 50px 100px;
+}
+.achivement .line {
+  color: var(--white);
+}
+.achivement .line::after {
+  background-color: var(--green);
+  transform: translateY(-5px) rotate(-2deg);
+}
+.outerBox {
+  display: flex;
+  width: 100%;
+}
+.outerBox .outerImg {
+  width: 50%;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+}
+.outerBox .outerContent {
+  width: 50%;
+  height: 50%;
+  padding: 100px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.outerContent .two:nth-child(1) {
+  margin-right: 20px;
+}
+.outerContent .innerContent {
+  padding: 30px 50px;
+  height: 150px;
+  text-align: center;
+  color: var(--white);
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+.innerContent h2 {
+  font-size: 2rem;
+}
+.outerContent .innerContent:nth-child(1) {
+  margin-bottom: 30px;
+}
+/* ---------Achivement-Section Ends-------- */
+
+/* ---------Review-Section Start-------- */
+.review {
+  padding: 0 100px;
+}
+.review .line {
+  color: var(--white);
+}
+.review .line::after {
+  background-color: var(--green);
+  transform: translateY(-5px) rotate(-2deg);
+}
+.review-content {
+  padding-top: 40px;
+}
+.review-content .row {
+  display: flex;
+}
+.row .student {
+  padding: 20px 0;
+}
+.student .stu-img img {
+  border-radius: 50%;
+  border: 5px solid var(--light-gray);
+}
+.student span {
+  display: inline;
+  color: var(--off-white);
+}
+.student p {
+  font-size: 1.2rem;
+  padding: 10px 20px 10px 0;
+  color: var(--off-white);
+}
+.student .name {
+  color: var(--green);
+  font-weight: 400;
+  font-size: 15px;
+}
+.student .title {
+  color: var(--off-white);
+  font-weight: lighter;
+  font-size: 16px;
+}
+/* ---------Review-Section Ends-------- */
+
+/* ---------Contact-Section Start-------- */
+.contact {
+  padding: 50px 100px;
+}
+.contact .line {
+  color: var(--white);
+}
+.contact .line::after {
+  background-color: var(--green);
+  transform: translateY(-5px) rotate(-3deg);
+}
+.contact .outerBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.contact .outerContent {
+  background-color: var(--light-gray);
+  padding: 30px 20px;
+  margin: 20px 100px;
+  box-shadow: 0 0 20px var(--black-opacity-6);
+}
+.outerContent form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px;
+  justify-content: space-between;
+}
+form input,
+form textarea {
+  padding: 15px 20px;
+  background-color: var(--dark-gray);
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+input::placeholder,
+textarea::placeholder {
+  text-transform: capitalize;
+  color: var(--off-white);
+  font-size: 16px;
+}
+input[type="button"] {
+  background-color: var(--green);
+  text-transform: capitalize;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+/* ---------Contact-Section End-------- */
+
+/* ---------Footer-Section Start-------- */
+footer {
+  background-color: var(--light-gray);
+  display: flex;
+  padding: 50px 100px;
+  width: 100%;
+}
+footer .left {
+  display: flex;
+  width: 50%;
+}
+footer .right {
+    display: flex;
+    width: 50%;
+}
+.inner-footer {
+    width: 50%;
+    padding: 20px;
+    color: var(--off-white);
+}
+.inner-footer h3{
+    padding-bottom: 30px;
+    text-transform: uppercase;
+}
+.inner-footer p{
+    padding: 10px 0;
+}
+.inner-footer .social-links{
+    color: var(--green);
+}
+.social-links i{
+    padding: 0 10px;
+    cursor: pointer;
+}
+p i{
+    padding-right: 10px;
+}
+.inner-footer input{
+    display: block;
+    border-radius: 50px;
+    background-color: var(--dark-gray);
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+.inner-footer input[type=button]{
+    background-color: var(--green);
+    cursor: pointer;
+}
+/* ---------Footer-Section Ends-------- */
